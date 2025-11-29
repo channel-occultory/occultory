@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Occultory</title>
-    <meta name="description" content="Occultory – オカルトや奇談を静かに集める小さなアーカイブ。まだ準備中です。" />
+
+    <title>Occultory | 静かなオカルト・アーカイブ</title>
+
+    <!-- 基本メタ -->
+    <meta name="description" content="Occultory（オカルトリー）は、静かな怪談や不思議な出来事を少しずつ集めていく、小さなオカルト・アーカイブです。まだ本公開前の準備中です。" />
+    <meta name="keywords" content="Occultory,オカルト,怪談,不思議な話,奇談,都市伝説,心霊,怖い話" />
+    <meta name="robots" content="index,follow" />
+
+    <!-- OGP -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Occultory | 静かなオカルト・アーカイブ" />
+    <meta property="og:description" content="大声で叫ぶホラーではなく、あとからじわじわ思い出してしまうような静かな怖さを集めていく場所です。" />
+    <meta property="og:url" content="https://occultory.com/" />
+    <!-- 後でちゃんとしたOG画像を置いたらパスを差し替える -->
+    <meta property="og:image" content="https://occultory.com/og-image.jpg" />
+
+    <!-- Twitterカード -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Occultory | 静かなオカルト・アーカイブ" />
+    <meta name="twitter:description" content="静かな怪談や説明しづらい違和感を、ゆっくり集めていく予定のサイトです。" />
+    <meta name="twitter:image" content="https://occultory.com/og-image.jpg" />
+
+    <!-- favicon（用意できたら置く） -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- Google Analytics GA4 -->
+    <!-- G-XXXXXXXXXX を自分の測定IDに置き換えること -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5S03YWK5KD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag("js", new Date());
+        gtag("config", "G-XXXXXXXXXX");
+    </script>
 </head>
 <body>
     <div class="noise-overlay"></div>
@@ -150,7 +184,7 @@
             </div>
 
             <p class="section-note">
-                本文の公開はまだ先です。  
+                本文の公開はまだ先です。<br />
                 サイトオープン後、このエリアがエピソード一覧や記事のアーカイブになります。
             </p>
         </section>
