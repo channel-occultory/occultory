@@ -1,41 +1,61 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>あなたのＨＰタイトル</title>
-<meta name="keywords" content="ページのキーワードA,B,C">
-<meta name="description" content="ページの説明">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Occultory</title>
+    <meta name="description" content="Occultory – something is stirring in the dark. Please wait a little longer." />
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div id="outer">
-<header>
-<div class="header-inner">
-<h1>あなたのＨＰタイトル</h1>
-<p>あなたのＨＰの説明文</p>
-</div>
-</header>
-<div id="content">
-<div class="inner">
-<h2>記事ページ見出し・大</h2>
-<p>文章あれこれ</p>
-<h3>記事ページ見出し・中</h3>
-<p>文章あれこれ</p>
-<h4>記事ページ見出し・小</h4>
-<p>文章あれこれ</p>
-</div>
-<aside>
-<div class="left-title">サイドバータイトル</div>
-<div class="link">
-<ul>
-<li>記事ページへのリンク</li>
-<li>記事ページへのリンク</li>
-</ul>
-</div>
-</aside>
-</div>
-<footer>© 2010 あなたのホームページ</footer>
-</div>
+    <div class="noise-overlay"></div>
+
+    <main class="page">
+        <header class="header">
+            <div class="mark">
+                <div class="mark-ring"></div>
+                <div class="mark-core"></div>
+            </div>
+            <div class="brand">
+                <h1 class="brand-title">Occultory</h1>
+                <p class="brand-tagline">Tales from the edge of the unknown</p>
+            </div>
+        </header>
+
+        <section class="message">
+            <p class="line line-main">
+                Something is stirring in the dark.
+            </p>
+            <p class="line line-sub">
+                The veil is not yet lifted. Please wait a little longer.
+            </p>
+        </section>
+
+        <section class="status">
+            <div class="status-label">Status</div>
+            <div class="status-bar">
+                <div class="status-bar-fill"></div>
+            </div>
+            <p class="status-text">
+                The ritual is still in progress. Check back soon.
+            </p>
+        </section>
+
+        <footer class="footer">
+            <p class="footer-copy">
+                © <span id="year"></span> Occultory. Emerging from the void.
+            </p>
+        </footer>
+    </main>
+
+    <script>
+        // Set current year
+        (function () {
+            var el = document.getElementById("year");
+            if (el) {
+                el.textContent = new Date().getFullYear();
+            }
+        })();
+    </script>
 </body>
 </html>
