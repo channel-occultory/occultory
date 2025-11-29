@@ -4,52 +4,230 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Occultory</title>
-    <meta name="description" content="Occultory – something is stirring in the dark. Please wait a little longer." />
+    <meta name="description" content="Occultory – tales from the edge of the unknown. The ritual is still in progress. Please wait a little longer." />
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
     <div class="noise-overlay"></div>
 
-    <main class="page">
-        <header class="header">
-            <div class="mark">
-                <div class="mark-ring"></div>
-                <div class="mark-core"></div>
-            </div>
-            <div class="brand">
-                <h1 class="brand-title">Occultory</h1>
-                <p class="brand-tagline">Tales from the edge of the unknown</p>
-            </div>
-        </header>
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a href="#top" class="logo">
+                <div class="logo-mark">
+                    <div class="logo-ring"></div>
+                    <div class="logo-core"></div>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">Occultory</span>
+                    <span class="logo-sub">Voices from the dark</span>
+                </div>
+            </a>
+            <nav class="nav">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#stories" class="nav-link">Stories</a>
+                <a href="#progress" class="nav-link">Progress</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-        <section class="message">
-            <p class="line line-main">
-                Something is stirring in the dark.
-            </p>
-            <p class="line line-sub">
-                The veil is not yet lifted. Please wait a little longer.
+    <main id="top" class="page">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-text">
+                <p class="hero-eyebrow">Something is stirring in the dark</p>
+                <h1 class="hero-title">
+                    The veil is not yet lifted.
+                </h1>
+                <p class="hero-lead">
+                    Occultory is preparing a collection of strange tales, eerie encounters,
+                    and unexplained phenomena. The ritual is still in progress.
+                    Please wait a little longer.
+                </p>
+
+                <div class="hero-actions">
+                    <button class="hero-button hero-button-primary" disabled>
+                        Awakening soon
+                    </button>
+                    <a href="#progress" class="hero-button hero-button-ghost">
+                        View the ritual progress
+                    </a>
+                </div>
+
+                <div class="hero-status">
+                    <span class="hero-status-label">Current status</span>
+                    <div class="status-bar">
+                        <div class="status-bar-fill"></div>
+                    </div>
+                    <span class="hero-status-text">
+                        Phase I – Summoning ideas and shaping the archive.
+                    </span>
+                </div>
+            </div>
+
+            <div class="hero-orbit">
+                <div class="sigil sigil-outer"></div>
+                <div class="sigil sigil-middle"></div>
+                <div class="sigil sigil-inner"></div>
+                <div class="sigil-center"></div>
+                <div class="sigil-label">Occultory is forming</div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section section-about">
+            <div class="section-header">
+                <h2 class="section-title">What is Occultory?</h2>
+                <p class="section-subtitle">
+                    A small chamber between everyday reality and the unknown, where unsettling
+                    stories gather and wait to be told.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <article class="about-card">
+                    <h3 class="about-card-title">Collected whispers</h3>
+                    <p class="about-card-body">
+                        Urban legends, personal encounters, and strange reports that refuse
+                        to be explained. Occultory keeps them in one place.
+                    </p>
+                </article>
+                <article class="about-card">
+                    <h3 class="about-card-title">Calm, not screaming</h3>
+                    <p class="about-card-body">
+                        No jumpscares. Just quiet, unnerving stories told in a low voice,
+                        the kind that lingers in the back of your mind.
+                    </p>
+                </article>
+                <article class="about-card">
+                    <h3 class="about-card-title">Still under construction</h3>
+                    <p class="about-card-body">
+                        The site itself is still mostly a ritual circle, not a library.
+                        Structure, visuals, and content are all being prepared.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- STORIES / CONTENT PREVIEW -->
+        <section id="stories" class="section section-stories">
+            <div class="section-header">
+                <h2 class="section-title">Stories taking shape</h2>
+                <p class="section-subtitle">
+                    These are the kinds of themes that will appear once the ritual is complete.
+                    For now, they are only outlines in the dark.
+                </p>
+            </div>
+
+            <div class="story-grid">
+                <article class="story-card">
+                    <div class="story-chip">Haunted Places</div>
+                    <h3 class="story-title">Rooms that remember</h3>
+                    <p class="story-body">
+                        Apartments, tunnels, rest stops, and side roads that refuse to let
+                        visitors leave untouched. Locations where something is slightly, persistently wrong.
+                    </p>
+                </article>
+
+                <article class="story-card">
+                    <div class="story-chip">Urban Legends</div>
+                    <h3 class="story-title">Stories that travel alone</h3>
+                    <p class="story-body">
+                        Tales that appear on message boards, late-night conversations, or local gossip.
+                        No author, no clear source—just repetition and variation.
+                    </p>
+                </article>
+
+                <article class="story-card">
+                    <div class="story-chip">Unexplained</div>
+                    <h3 class="story-title">Data that doesn’t fit</h3>
+                    <p class="story-body">
+                        Glitches, coincidences that go too far, dreams that line up too well
+                        with reality, and other observations that statistics dislike.
+                    </p>
+                </article>
+            </div>
+
+            <p class="section-note">
+                Full stories are not available yet. When the site opens, this area will become
+                the main archive of episodes and articles.
             </p>
         </section>
 
-        <section class="status">
-            <div class="status-label">Status</div>
-            <div class="status-bar">
-                <div class="status-bar-fill"></div>
+        <!-- PROGRESS / ROADMAP -->
+        <section id="progress" class="section section-progress">
+            <div class="section-header">
+                <h2 class="section-title">Ritual progress</h2>
+                <p class="section-subtitle">
+                    A rough outline of what is happening behind the curtain.
+                </p>
             </div>
-            <p class="status-text">
-                The ritual is still in progress. Check back soon.
-            </p>
+
+            <ol class="timeline">
+                <li class="timeline-item timeline-item-done">
+                    <div class="timeline-badge"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Phase I – Awakening</h3>
+                        <p class="timeline-text">
+                            Domain claimed, first seal drawn, basic gate to the site established.
+                        </p>
+                    </div>
+                </li>
+                <li class="timeline-item timeline-item-active">
+                    <div class="timeline-badge"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Phase II – First stories</h3>
+                        <p class="timeline-text">
+                            Selecting and shaping core tales, refining the look and feel of Occultory.
+                        </p>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-badge"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Phase III – Public opening</h3>
+                        <p class="timeline-text">
+                            Full site release with an initial library of episodes and a stable update cycle.
+                        </p>
+                    </div>
+                </li>
+            </ol>
         </section>
 
-        <footer class="footer">
-            <p class="footer-copy">
-                © <span id="year"></span> Occultory. Emerging from the void.
-            </p>
-        </footer>
+        <!-- CONTACT / PLACEHOLDER -->
+        <section id="contact" class="section section-contact">
+            <div class="section-header">
+                <h2 class="section-title">Stay close to the signal</h2>
+                <p class="section-subtitle">
+                    No mailing list, no contact form yet. For now, just remember the name:
+                    <strong>Occultory</strong>. When the door finally opens, you will know.
+                </p>
+            </div>
+
+            <div class="contact-box">
+                <p class="contact-line">
+                    “Emerging from the void. Please check back from time to time.”
+                </p>
+                <p class="contact-note">
+                    This section will later hold contact information or links to where
+                    new episodes are announced.
+                </p>
+            </div>
+        </section>
     </main>
 
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <p class="footer-copy">
+                © <span id="year"></span> Occultory. The ritual continues.
+            </p>
+            <p class="footer-note">
+                This is a placeholder site. Content, layout, and features are still under construction.
+            </p>
+        </div>
+    </footer>
+
     <script>
-        // Set current year
         (function () {
             var el = document.getElementById("year");
             if (el) {
