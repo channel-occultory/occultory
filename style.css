@@ -14,12 +14,13 @@ body {
 
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-    background: radial-gradient(circle at top, #171522 0, #06040c 55%, #000 100%);
+        "Hiragino Sans", "Yu Gothic", "Meiryo", "Noto Sans JP", sans-serif;
+    background:
+        radial-gradient(circle at top, #211b3a 0, #05040a 50%, #02010a 100%);
     color: #f5f5f5;
 }
 
-/* Subtle noise overlay */
+/* Subtle noise */
 .noise-overlay {
     position: fixed;
     inset: 0;
@@ -30,7 +31,19 @@ body {
     z-index: 0;
 }
 
-/* Global layout */
+/* Soft background shapes */
+.bg-orbit {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        radial-gradient(circle at 20% 0%, rgba(180, 120, 255, 0.28) 0, transparent 55%),
+        radial-gradient(circle at 80% 100%, rgba(80, 180, 255, 0.18) 0, transparent 55%);
+    opacity: 0.9;
+}
+
+/* Layout */
 .page {
     position: relative;
     z-index: 1;
@@ -47,11 +60,11 @@ body {
     backdrop-filter: blur(14px);
     background: linear-gradient(
         to bottom,
-        rgba(3, 3, 6, 0.95),
-        rgba(3, 3, 8, 0.7),
+        rgba(3, 3, 10, 0.98),
+        rgba(3, 3, 12, 0.8),
         transparent
     );
-    border-bottom: 1px solid rgba(120, 100, 190, 0.25);
+    border-bottom: 1px solid rgba(120, 100, 190, 0.35);
 }
 
 .site-header-inner {
@@ -109,7 +122,7 @@ body {
 .logo-sub {
     display: block;
     font-size: 0.7rem;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: #a7a1d0;
 }
@@ -145,7 +158,7 @@ body {
     width: 100%;
 }
 
-/* Hero section */
+/* Hero */
 .hero {
     display: grid;
     grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
@@ -174,8 +187,8 @@ body {
 
 .hero-lead {
     font-size: 0.98rem;
-    line-height: 1.7;
-    color: #cbc7e6;
+    line-height: 1.8;
+    color: #d2cee9;
     margin-bottom: 1.5rem;
 }
 
@@ -201,7 +214,7 @@ body {
     background: radial-gradient(circle at top left, #f5e1ff, #7f6aff);
     color: #0a0716;
     box-shadow: 0 0 22px rgba(120, 90, 255, 0.45);
-    opacity: 0.8;
+    opacity: 0.86;
 }
 
 .hero-button-primary[disabled] {
@@ -209,15 +222,15 @@ body {
 }
 
 .hero-button-ghost {
-    background: transparent;
-    border-color: rgba(155, 140, 235, 0.7);
-    color: #d8d3ff;
+    background: rgba(10, 6, 30, 0.6);
+    border-color: rgba(155, 140, 235, 0.9);
+    color: #e6e1ff;
     text-decoration: none;
     cursor: pointer;
 }
 
 .hero-button-ghost:hover {
-    background: rgba(35, 25, 80, 0.6);
+    background: rgba(35, 25, 80, 0.9);
 }
 
 .hero-status {
@@ -343,7 +356,7 @@ body {
 .section-subtitle {
     font-size: 0.95rem;
     color: #c6c3e4;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .section-note {
@@ -361,9 +374,9 @@ body {
 
 .about-card {
     border-radius: 1.1rem;
-    border: 1px solid rgba(120, 100, 200, 0.4);
-    background: radial-gradient(circle at top left, rgba(55, 35, 95, 0.7), rgba(10, 7, 20, 0.9));
-    box-shadow: 0 0 32px rgba(40, 25, 80, 0.6);
+    border: 1px solid rgba(120, 100, 200, 0.5);
+    background: radial-gradient(circle at top left, rgba(55, 35, 95, 0.85), rgba(6, 4, 18, 0.96));
+    box-shadow: 0 0 32px rgba(24, 18, 60, 0.9);
     padding: 1.35rem 1.4rem;
 }
 
@@ -374,8 +387,8 @@ body {
 
 .about-card-body {
     font-size: 0.9rem;
-    color: #dcd9ff;
-    line-height: 1.6;
+    color: #e2dfff;
+    line-height: 1.7;
 }
 
 /* Stories */
@@ -387,8 +400,8 @@ body {
 
 .story-card {
     border-radius: 1.1rem;
-    border: 1px solid rgba(105, 92, 190, 0.6);
-    background: radial-gradient(circle at top, rgba(60, 40, 115, 0.9), rgba(6, 4, 15, 0.95));
+    border: 1px solid rgba(105, 92, 190, 0.7);
+    background: radial-gradient(circle at top, rgba(60, 40, 115, 0.96), rgba(5, 3, 14, 0.98));
     padding: 1.35rem 1.4rem 1.4rem;
 }
 
@@ -396,7 +409,7 @@ body {
     display: inline-flex;
     align-items: center;
     border-radius: 999px;
-    border: 1px solid rgba(230, 210, 255, 0.7);
+    border: 1px solid rgba(230, 210, 255, 0.8);
     padding: 0.2rem 0.7rem;
     font-size: 0.72rem;
     letter-spacing: 0.14em;
@@ -412,14 +425,14 @@ body {
 
 .story-body {
     font-size: 0.9rem;
-    color: #e0dcff;
-    line-height: 1.6;
+    color: #e5e1ff;
+    line-height: 1.7;
 }
 
 /* Timeline */
 .timeline {
     list-style: none;
-    border-left: 1px solid rgba(110, 100, 190, 0.6);
+    border-left: 1px solid rgba(110, 100, 190, 0.7);
     margin-left: 0.75rem;
     padding-left: 1.25rem;
 }
@@ -437,13 +450,13 @@ body {
     width: 11px;
     height: 11px;
     border-radius: 50%;
-    border: 2px solid rgba(210, 190, 255, 0.85);
+    border: 2px solid rgba(210, 190, 255, 0.9);
     background: #05020c;
 }
 
 .timeline-item-done .timeline-badge {
     background: radial-gradient(circle, #f5e1ff, #7f6aff);
-    box-shadow: 0 0 12px rgba(200, 175, 255, 0.8);
+    box-shadow: 0 0 12px rgba(200, 175, 255, 0.9);
 }
 
 .timeline-item-active .timeline-badge {
@@ -459,17 +472,17 @@ body {
 .timeline-text {
     font-size: 0.9rem;
     color: #cbc7e6;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
-/* Contact */
+/* Contact / info */
 .contact-box {
     border-radius: 1rem;
-    border: 1px dashed rgba(190, 175, 255, 0.7);
+    border: 1px dashed rgba(190, 175, 255, 0.9);
     background: linear-gradient(
         135deg,
-        rgba(35, 24, 70, 0.9),
-        rgba(10, 7, 22, 0.95)
+        rgba(35, 24, 70, 0.96),
+        rgba(10, 7, 22, 0.98)
     );
     padding: 1.4rem 1.5rem;
     max-width: 40rem;
@@ -477,21 +490,22 @@ body {
 
 .contact-line {
     font-size: 0.95rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
     color: #efe8ff;
 }
 
 .contact-note {
     font-size: 0.85rem;
     color: #b9b3e0;
+    line-height: 1.7;
 }
 
 /* Footer */
 .site-footer {
     position: relative;
     z-index: 1;
-    border-top: 1px solid rgba(75, 65, 140, 0.7);
-    background: radial-gradient(circle at top, rgba(20, 10, 55, 0.9), #030208);
+    border-top: 1px solid rgba(75, 65, 140, 0.8);
+    background: radial-gradient(circle at top, rgba(20, 10, 55, 0.95), #030208);
 }
 
 .site-footer-inner {
