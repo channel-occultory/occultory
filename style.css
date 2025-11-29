@@ -1,147 +1,229 @@
-@charset "UTF-8";
+/* Base reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
 body {
-	margin: 0;
-	padding: 0;
-	line-height: 1.6;
-	background: #fff;
-	background-size: 40px 40px;
+    height: 100%;
 }
-#outer {
-	margin: 0 auto;
-	width: 1000px;
-	background-color: #fff;
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    background: radial-gradient(circle at top, #151522 0, #050509 55%, #000 100%);
+    color: #f5f5f5;
+    overflow: hidden;
 }
-header {
-	height: 80px;
-	padding: 20px 30px;
+
+/* Subtle noise overlay */
+.noise-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.12;
+    mix-blend-mode: soft-light;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' stitchTiles='noStitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    z-index: 0;
 }
-.header-inner {
-	padding: 0;
-	font-size: 12px;
+
+/* Layout */
+.page {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    padding: 3rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
-h1 {
-	font-size: 24px;
-	margin: 0;
-	padding: 0;
+
+/* Header / branding */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    margin-bottom: 2.5rem;
 }
-h1 a {
-	color: #000;
-	text-decoration: none;
+
+.mark {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: radial-gradient(circle, rgba(180, 120, 255, 0.3), transparent);
+    animation: mark-pulse 3.6s ease-in-out infinite;
 }
-h1 a:hover {
-	text-decoration: underline;
+
+.mark-ring {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid rgba(200, 150, 255, 0.7);
+    box-shadow: 0 0 18px rgba(180, 120, 255, 0.55);
 }
-h2 {
-	font-size: 22px;
-	margin: 0;
-	padding: 10px;
-	background-color: #D6E7EE;
+
+.mark-core {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #e9d3ff;
+    box-shadow: 0 0 22px rgba(220, 180, 255, 0.95);
 }
-h2 a {
-	text-decoration: none;
-	color: #265699;
+
+.brand-title {
+    font-size: clamp(2.1rem, 4vw, 2.6rem);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.75);
 }
-p {
-	margin: 1em 0;
+
+.brand-tagline {
+    margin-top: 0.4rem;
+    font-size: 0.92rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #b8b2d6;
 }
-.aka {
-	color: #B0231D;
-	font-weight: bold;
+
+/* Main message */
+.message {
+    margin-bottom: 2rem;
 }
-img {
-	max-width: 100%;
-	height: auto;
-	border: 0;
+
+.line {
+    line-height: 1.6;
 }
-a {
-	color: #094a94;
+
+.line-main {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
 }
-#content {
-	padding: 0 20px;
+
+.line-sub {
+    font-size: 0.98rem;
+    color: #cbc7e6;
+    max-width: 32rem;
 }
-#content::after {
-	content: "";
-	display: table;
-	clear: both;
+
+/* Status / progress */
+.status {
+    margin-bottom: 2.75rem;
 }
-.inner {
-	float: right;
-	width: 640px;
-	margin: 0;
-	padding: 10px 20px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+.status-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #a396d8;
+    margin-bottom: 0.6rem;
 }
-aside {
-	padding: 20px;
-	color: #676767;
-	width: 220px;
-	float: left;
-	background-color: #f8f8f8;
+
+.status-bar {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    height: 6px;
+    border-radius: 999px;
+    background: linear-gradient(
+        90deg,
+        rgba(80, 70, 140, 0.5),
+        rgba(30, 20, 70, 0.4)
+    );
+    overflow: hidden;
 }
-.left-title {
-	padding: 10px;
-	font-weight: bold;
-	color: #333;
+
+.status-bar-fill {
+    position: absolute;
+    inset: 0;
+    transform-origin: left;
+    background: linear-gradient(
+        90deg,
+        #f5e1ff,
+        #c59dff,
+        #806bff,
+        #f5e1ff
+    );
+    background-size: 200% 100%;
+    animation: status-flow 4.2s ease-in-out infinite;
 }
-.link {
-	margin: 0;
-	padding: 0 0 10px 0;
+
+.status-text {
+    margin-top: 0.65rem;
+    font-size: 0.9rem;
+    color: #bcb4e3;
 }
-.link a {
-	color: #094a94;
-	text-decoration: none;
+
+/* Footer */
+.footer {
+    margin-top: auto;
+    font-size: 0.8rem;
+    color: #7c769c;
 }
-.link a:hover {
-	text-decoration: underline;
+
+/* Animations */
+@keyframes mark-pulse {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    50% {
+        transform: scale(1.06);
+        opacity: 1;
+    }
 }
-ul {
-	margin: 0 0 0 1em;
-	padding: 0;
+
+@keyframes status-flow {
+    0% {
+        transform: scaleX(0.25) translateX(0%);
+        background-position: 0% 50%;
+    }
+    50% {
+        transform: scaleX(0.75) translateX(18%);
+        background-position: 100% 50%;
+    }
+    100% {
+        transform: scaleX(0.25) translateX(100%);
+        background-position: 0% 50%;
+    }
 }
-.link li {
-	list-style: none;
-	padding: 4px 0;
-}
-footer {
-	text-align: center;
-	color: #666;
-	font-size: 15px;
-	height: 100px;
-	padding-top: 40px;
-	clear: both;
-}
-blockquote {
-	border: 1px solid #ccc;
-	padding: 5px;
-	margin: 10px;
-}
-@media (max-width: 768px) {
-#outer {
-	width: 100%;
-	padding: 0;
-}
-#content {
-	padding: 0 10px;
-}
-.inner, aside {
-	float: none;
-	width: 100%;
-}
-.inner {
-	margin: 0;
-	padding: 10px 0;
-	box-shadow: none;
-}
-aside {
-	padding: 10px 0;
-}
-.header-inner {
-	font-size: 10px;
-}
-h1 {
-	font-size: 20px;
-}
-h2 {
-	font-size: 20px;
-}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .page {
+        padding: 2.25rem 1.25rem;
+    }
+
+    .header {
+        gap: 1.2rem;
+    }
+
+    .mark {
+        width: 60px;
+        height: 60px;
+    }
+
+    .mark-ring {
+        width: 52px;
+        height: 52px;
+    }
+
+    .line-main {
+        font-size: 1.05rem;
+    }
+
+    .brand-tagline {
+        font-size: 0.82rem;
+    }
 }
